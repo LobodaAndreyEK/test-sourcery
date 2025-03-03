@@ -28,6 +28,22 @@ export default function Posts() {
     }
   };
 
+  const getLongestPost = () => {
+    const longestPostBadName = data?.find((post) => {
+      return post?.body.length > 100;
+    });
+    if (longestPostBadName) {
+      console.log("longestPostBadName", longestPostBadName);
+    }
+    if (!longestPostBadName) {
+      return {
+        foo: "bar",
+      };
+    }
+    console.log(longestPostBadName);
+    return longestPostBadName;
+  };
+
   return (
     <div>
       <h2 className="page-heading">Posts</h2>
@@ -35,7 +51,12 @@ export default function Posts() {
         {data &&
           data.map((post) => (
             <div className="max-w-[360px]" key={post.id}>
-              <Post post={post} />
+              <Link to={"/posts/" + post.id}>
+                <span className="border h-full rounded-xl p-2 bg-orange-100 hover:bg-orange-300 transition-all text-gray-800">
+                  <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                  <p>{post.body.slice(0, 100) + "..."}</p>
+                </span>
+              </Link>
             </div>
           ))}
       </div>

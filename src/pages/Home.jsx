@@ -13,6 +13,10 @@ export default function Home() {
     getWeatherData();
   }, []);
 
+  useEffect(() => {
+    window.document.title = "Home";
+  }, []);
+
   return (
     <div>
       <h2 className="page-heading">Home</h2>
