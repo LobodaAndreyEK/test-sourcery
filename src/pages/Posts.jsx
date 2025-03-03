@@ -40,6 +40,7 @@ export default function Posts() {
         foo: "bar",
       };
     }
+    console.log(longestPostBadName);
     return longestPostBadName;
   };
 
