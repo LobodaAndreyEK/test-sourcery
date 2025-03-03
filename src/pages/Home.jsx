@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <div>
       <h2 className="page-heading">Home</h2>
+      <span>Some lorem ipsum dolor sit amet</span>
       {!!data && (
         <div>
           <h3>Current temperature is {data.temperature} •C</h3>

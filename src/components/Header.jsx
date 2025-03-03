@@ -16,6 +16,17 @@ export default function Header() {
         <li>
           <Link to="/contacts">Contact us</Link>
         </li>
+        <li>
+          <Link to="/about">about</Link>
+        </li>
+        <button
+          onClick={() => {
+            sessionStorage.clear();
+            window.reload;
+          }}
+        >
+          Logout
+        </button>
       </ul>
     </nav>
   );
