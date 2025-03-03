@@ -9,6 +9,25 @@ export default function Posts() {
       .then((json) => setData(json.slice(0, 10)));
   }, []);
 
+  // write some bad code with low quality
+  const getSomeData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await response.json();
+    return data.slice(0, 10);
+  };
+
+  const test = () => {
+    console.log("test");
+  };
+
+  const asd = () => {
+    if (dummyRandom > 0.5) {
+      console.log("asd");
+    } else {
+      console.log("asd2");
+    }
+  };
+
   return (
     <div>
       <h2 className="page-heading">Posts</h2>
